@@ -26,7 +26,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		F33E41B11D3D31D500A94E24 /* YJTaxonomy */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = YJTaxonomy; sourceTree = BUILT_PRODUCTS_DIR; };
+		F33E41B11D3D31D500A94E24 /* YJTaxonomer */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = YJTaxonomer; sourceTree = BUILT_PRODUCTS_DIR; };
 		F33E41B41D3D31D500A94E24 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		F33E41C61D3D36DA00A94E24 /* headers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = headers.h; sourceTree = "<group>"; };
 		F33E41C71D3D36DA00A94E24 /* kraken3_headers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = kraken3_headers.h; sourceTree = "<group>"; };
@@ -60,7 +60,7 @@
 		F33E41B21D3D31D500A94E24 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				F33E41B11D3D31D500A94E24 /* YJTaxonomy */,
+				F33E41B11D3D31D500A94E24 /* YJTaxonomer */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -85,9 +85,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		F33E41B01D3D31D500A94E24 /* YJTaxonomy */ = {
+		F33E41B01D3D31D500A94E24 /* YJTaxonomer */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F33E41B81D3D31D500A94E24 /* Build configuration list for PBXNativeTarget "YJTaxonomy" */;
+			buildConfigurationList = F33E41B81D3D31D500A94E24 /* Build configuration list for PBXNativeTarget "YJTaxonomer" */;
 			buildPhases = (
 				F33E41AD1D3D31D500A94E24 /* Sources */,
 				F33E41AE1D3D31D500A94E24 /* Frameworks */,
@@ -97,9 +97,9 @@
 			);
 			dependencies = (
 			);
-			name = YJTaxonomy;
+			name = YJTaxonomer;
 			productName = YJTaxonomy;
-			productReference = F33E41B11D3D31D500A94E24 /* YJTaxonomy */;
+			productReference = F33E41B11D3D31D500A94E24 /* YJTaxonomer */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
@@ -116,7 +116,7 @@
 					};
 				};
 			};
-			buildConfigurationList = F33E41AC1D3D31D500A94E24 /* Build configuration list for PBXProject "YJTaxonomy" */;
+			buildConfigurationList = F33E41AC1D3D31D500A94E24 /* Build configuration list for PBXProject "YJTaxonomer" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -128,7 +128,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				F33E41B01D3D31D500A94E24 /* YJTaxonomy */,
+				F33E41B01D3D31D500A94E24 /* YJTaxonomer */,
 			);
 		};
 /* End PBXProject section */
@@ -232,21 +232,21 @@
 		F33E41B91D3D31D500A94E24 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = YJTaxonomer;
 			};
 			name = Debug;
 		};
 		F33E41BA1D3D31D500A94E24 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = YJTaxonomer;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		F33E41AC1D3D31D500A94E24 /* Build configuration list for PBXProject "YJTaxonomy" */ = {
+		F33E41AC1D3D31D500A94E24 /* Build configuration list for PBXProject "YJTaxonomer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F33E41B61D3D31D500A94E24 /* Debug */,
@@ -255,7 +255,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F33E41B81D3D31D500A94E24 /* Build configuration list for PBXNativeTarget "YJTaxonomy" */ = {
+		F33E41B81D3D31D500A94E24 /* Build configuration list for PBXNativeTarget "YJTaxonomer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F33E41B91D3D31D500A94E24 /* Debug */,

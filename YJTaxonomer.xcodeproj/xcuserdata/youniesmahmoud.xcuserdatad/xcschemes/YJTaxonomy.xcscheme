@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "F33E41B01D3D31D500A94E24"
-               BuildableName = "YJTaxonomy"
-               BlueprintName = "YJTaxonomy"
-               ReferencedContainer = "container:YJTaxonomy.xcodeproj">
+               BuildableName = "YJTaxonomer"
+               BlueprintName = "YJTaxonomer"
+               ReferencedContainer = "container:YJTaxonomer.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "F33E41B01D3D31D500A94E24"
-            BuildableName = "YJTaxonomy"
-            BlueprintName = "YJTaxonomy"
-            ReferencedContainer = "container:YJTaxonomy.xcodeproj">
+            BuildableName = "YJTaxonomer"
+            BlueprintName = "YJTaxonomer"
+            ReferencedContainer = "container:YJTaxonomer.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -56,9 +56,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "F33E41B01D3D31D500A94E24"
-            BuildableName = "YJTaxonomy"
-            BlueprintName = "YJTaxonomy"
-            ReferencedContainer = "container:YJTaxonomy.xcodeproj">
+            BuildableName = "YJTaxonomer"
+            BlueprintName = "YJTaxonomer"
+            ReferencedContainer = "container:YJTaxonomer.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -75,9 +75,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "F33E41B01D3D31D500A94E24"
-            BuildableName = "YJTaxonomy"
-            BlueprintName = "YJTaxonomy"
-            ReferencedContainer = "container:YJTaxonomy.xcodeproj">
+            BuildableName = "YJTaxonomer"
+            BlueprintName = "YJTaxonomer"
+            ReferencedContainer = "container:YJTaxonomer.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:YJTaxonomy.xcodeproj">
+      location = "self:/Users/youniesmahmoud/YJTaxonomer/YJTaxonomer.xcodeproj">
    </FileRef>
 </Workspace>
