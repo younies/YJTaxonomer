@@ -55,8 +55,13 @@ public:
     
     LONGS get_Number_Of_Node_Leaves(Node node);
     
+    LONGS getNumberOfHits(Node node , vector<LONGS> & sorted_indicies);// the indicies should be sorted
+    
+    void get_hitted_nodes(Node node , vector<LONGS> & sorted_indicies , vector<Node> & hitted_Nodes ); // return list of node hitted under the given node
     
     Node getNodeFromIndex(LONGS index);
+    
+    
     
     vector<LONG> getSortedLeafsUIDs();
 };

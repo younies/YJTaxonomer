@@ -23,7 +23,7 @@ public:
     ~YRJ() ;
     bool isKmerExist(LONG kmer);
     //LONG getRandomSamples(vector<LONG> &samples , LONG numOfSamples);
-    vector<LONG> getRandomSamples(string file_path, LONGS numOfSamples);
+    vector<LONG> getRandomSamples(string file_path, LONGS numOfSamples);// this function free all the memory after getting the samples
 };
 
 #endif /* YRJ_hpp */

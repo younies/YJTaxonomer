@@ -263,6 +263,22 @@ LONGS Tree_trie::get_Number_Of_Node_Leaves(Node node)
 
 
 
+LONGS Tree_trie::getNumberOfHits(Node node , vector<LONGS> &indicies)
+{
+    LONGS ret = 0;
+    if(binary_search(indicies.begin(), indicies.end(), node.myselfIndex))
+        ret += 1;
+    
+    for (LONGS i = 0 , childerenNumber = node.children.size(); i < childerenNumber ; ++i)
+    {
+        ret += getNumberOfHits( trie[ node.children[i]  ] , indicies);
+    }
+    
+    return ret;
+}
+
+
+
 Node Tree_trie::getNodeFromIndex(LONGS index)
 {
     return trie[index];
@@ -272,18 +288,20 @@ Node Tree_trie::getNodeFromIndex(LONGS index)
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
+void Tree_trie::get_hitted_nodes(Node node , vector<LONGS> & sorted_indicies , vector<Node> & hitted_Nodes )
+{
+    if ( binary_search(sorted_indicies.begin(), sorted_indicies.end(), node.myselfIndex) )
+    {
+        hitted_Nodes.push_back(node);
+    }
+    
+    for (LONGS i = 0 , n = node.children.size(); i < n ; ++i)
+    {
+        get_hitted_nodes(trie[ node.children[i] ] ,  sorted_indicies ,  hitted_Nodes );
+    }
+    
+    return;
+}
 
 
 
