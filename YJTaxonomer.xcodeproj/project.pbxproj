@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F33E41B51D3D31D500A94E24 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F33E41B41D3D31D500A94E24 /* main.cpp */; };
-		F33E41CE1D3D36DA00A94E24 /* node_reader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F33E41C81D3D36DA00A94E24 /* node_reader.cpp */; };
-		F33E41CF1D3D36DA00A94E24 /* tree_builder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F33E41CA1D3D36DA00A94E24 /* tree_builder.cpp */; };
-		F33E41D01D3D36DA00A94E24 /* YRJ.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F33E41CC1D3D36DA00A94E24 /* YRJ.cpp */; };
+		F33E41DA1D3D38D400A94E24 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F33E41D31D3D38D400A94E24 /* main.cpp */; };
+		F33E41DB1D3D38D400A94E24 /* node_reader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F33E41D41D3D38D400A94E24 /* node_reader.cpp */; };
+		F33E41DC1D3D38D400A94E24 /* tree_builder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F33E41D61D3D38D400A94E24 /* tree_builder.cpp */; };
+		F33E41DD1D3D38D400A94E24 /* YRJ.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F33E41D81D3D38D400A94E24 /* YRJ.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -27,15 +27,15 @@
 
 /* Begin PBXFileReference section */
 		F33E41B11D3D31D500A94E24 /* YJTaxonomer */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = YJTaxonomer; sourceTree = BUILT_PRODUCTS_DIR; };
-		F33E41B41D3D31D500A94E24 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
-		F33E41C61D3D36DA00A94E24 /* headers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = headers.h; sourceTree = "<group>"; };
-		F33E41C71D3D36DA00A94E24 /* kraken3_headers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = kraken3_headers.h; sourceTree = "<group>"; };
-		F33E41C81D3D36DA00A94E24 /* node_reader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = node_reader.cpp; sourceTree = "<group>"; };
-		F33E41C91D3D36DA00A94E24 /* node_reader.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = node_reader.hpp; sourceTree = "<group>"; };
-		F33E41CA1D3D36DA00A94E24 /* tree_builder.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = tree_builder.cpp; sourceTree = "<group>"; };
-		F33E41CB1D3D36DA00A94E24 /* tree_builder.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = tree_builder.hpp; sourceTree = "<group>"; };
-		F33E41CC1D3D36DA00A94E24 /* YRJ.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = YRJ.cpp; sourceTree = "<group>"; };
-		F33E41CD1D3D36DA00A94E24 /* YRJ.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = YRJ.hpp; sourceTree = "<group>"; };
+		F33E41D11D3D38D400A94E24 /* headers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = headers.h; path = YJTaxonomer/headers.h; sourceTree = SOURCE_ROOT; };
+		F33E41D31D3D38D400A94E24 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = main.cpp; path = YJTaxonomer/main.cpp; sourceTree = SOURCE_ROOT; };
+		F33E41D41D3D38D400A94E24 /* node_reader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = node_reader.cpp; path = YJTaxonomer/node_reader.cpp; sourceTree = SOURCE_ROOT; };
+		F33E41D51D3D38D400A94E24 /* node_reader.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = node_reader.hpp; path = YJTaxonomer/node_reader.hpp; sourceTree = SOURCE_ROOT; };
+		F33E41D61D3D38D400A94E24 /* tree_builder.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = tree_builder.cpp; path = YJTaxonomer/tree_builder.cpp; sourceTree = SOURCE_ROOT; };
+		F33E41D71D3D38D400A94E24 /* tree_builder.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = tree_builder.hpp; path = YJTaxonomer/tree_builder.hpp; sourceTree = SOURCE_ROOT; };
+		F33E41D81D3D38D400A94E24 /* YRJ.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = YRJ.cpp; path = YJTaxonomer/YRJ.cpp; sourceTree = SOURCE_ROOT; };
+		F33E41D91D3D38D400A94E24 /* YRJ.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = YRJ.hpp; path = YJTaxonomer/YRJ.hpp; sourceTree = SOURCE_ROOT; };
+		F33E41DE1D3D3EFA00A94E24 /* configuration.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = configuration.h; path = YJTaxonomer/configuration.h; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,15 +68,15 @@
 		F33E41B31D3D31D500A94E24 /* YJTaxonomer */ = {
 			isa = PBXGroup;
 			children = (
-				F33E41C61D3D36DA00A94E24 /* headers.h */,
-				F33E41C71D3D36DA00A94E24 /* kraken3_headers.h */,
-				F33E41C81D3D36DA00A94E24 /* node_reader.cpp */,
-				F33E41C91D3D36DA00A94E24 /* node_reader.hpp */,
-				F33E41CA1D3D36DA00A94E24 /* tree_builder.cpp */,
-				F33E41CB1D3D36DA00A94E24 /* tree_builder.hpp */,
-				F33E41CC1D3D36DA00A94E24 /* YRJ.cpp */,
-				F33E41CD1D3D36DA00A94E24 /* YRJ.hpp */,
-				F33E41B41D3D31D500A94E24 /* main.cpp */,
+				F33E41D11D3D38D400A94E24 /* headers.h */,
+				F33E41DE1D3D3EFA00A94E24 /* configuration.h */,
+				F33E41D31D3D38D400A94E24 /* main.cpp */,
+				F33E41D41D3D38D400A94E24 /* node_reader.cpp */,
+				F33E41D51D3D38D400A94E24 /* node_reader.hpp */,
+				F33E41D61D3D38D400A94E24 /* tree_builder.cpp */,
+				F33E41D71D3D38D400A94E24 /* tree_builder.hpp */,
+				F33E41D81D3D38D400A94E24 /* YRJ.cpp */,
+				F33E41D91D3D38D400A94E24 /* YRJ.hpp */,
 			);
 			name = YJTaxonomer;
 			path = YJTaxonomy;
@@ -138,10 +138,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F33E41CE1D3D36DA00A94E24 /* node_reader.cpp in Sources */,
-				F33E41D01D3D36DA00A94E24 /* YRJ.cpp in Sources */,
-				F33E41CF1D3D36DA00A94E24 /* tree_builder.cpp in Sources */,
-				F33E41B51D3D31D500A94E24 /* main.cpp in Sources */,
+				F33E41DB1D3D38D400A94E24 /* node_reader.cpp in Sources */,
+				F33E41DD1D3D38D400A94E24 /* YRJ.cpp in Sources */,
+				F33E41DC1D3D38D400A94E24 /* tree_builder.cpp in Sources */,
+				F33E41DA1D3D38D400A94E24 /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

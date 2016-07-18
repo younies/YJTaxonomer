@@ -10,9 +10,7 @@
 #define node_reader_hpp
 
 
-#include "kraken3_headers.h"
-#include <stdio.h>
-
+#include "headers.h"
 
 class Tree {
     

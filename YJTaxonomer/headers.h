@@ -21,7 +21,6 @@
 #include <set>
 #include <sstream>
 #include <stdint.h>
-#include <string.h>
 #include <string>
 #include <sys/mman.h>
 #include <sys/stat.h>
@@ -50,9 +49,23 @@
 #include <memory.h>
 #include <fstream>
 
+//headaers for the program itself
+
+
+
 
 using namespace std;
+
 typedef unsigned long LONG;
 typedef long LONGS;
+
+
+struct Node {
+    LONG uid;
+    LONG parentUID;
+    LONGS parentIndex;
+    LONGS myselfIndex;
+    vector<LONG> children;
+};
 
 #endif /* headers_h */

@@ -15,32 +15,36 @@ Tree_trie::Tree_trie(string path_names , string path_nodes)
     this->path_nodes = path_nodes;
     construct_ids_names();
     constructing_trie();
-    construct_sorted_leafs(0);
-    cerr << count << endl;
-    printf("all done !!!!  %d \n", (int)this->sorted_leafs_df.size());
+    construct_sorted_leafs();
+    printf("all done !!!!  for the trie \n");
 }
-
 
 //implementing the: construct_ids_names()
 void Tree_trie::construct_ids_names()
 {
     //open the names file
-    ifstream names_file(path_names);
-    
+    ifstream file_names(path_names);
+    if(!file_names.is_open())
+    {
+        cerr << "we coud not find the file for names for : " + path_names << endl;
+        return;
+    }
     //read from the file line by line
     string line;
-    int id;
+    LONG uid;
     string name;
-    int index = -1;
-    while (getline(names_file, line, '\n'))
+    
+    LONGS index = -1;
+    while (getline(file_names, line, '\n'))
     {
         index++;
         //put the line in the string stream
         stringstream liness(line);
         
         // pushing the id
-        liness >> id;
-        ids.push_back(id);
+        liness >> uid;
+        this->ids.push_back(uid);
+        
         vector<string> temp;
         names.push_back(temp);
         getline(liness, name, '\t'); // to remove the first tab
@@ -50,7 +54,7 @@ void Tree_trie::construct_ids_names()
         }
         
     }
-    printf("building ids : %d , names : %d \n", (int)ids.size() , (int)names.size());
+    printf("building ids : %d , names : %d  \n", (int)ids.size() , (int)names.size());
 }
 //#########end of the: construct_ids_names()
 
@@ -60,40 +64,52 @@ void Tree_trie::construct_ids_names()
 void Tree_trie::constructing_trie()
 {
     //open the node file
-    ifstream nodes_file(path_nodes);
+    ifstream file_nodes(path_nodes);
+    if(!file_nodes.is_open())
+    {
+        cerr << "the file to the nodes does not exist for: " + path_nodes << endl;
+        return;
+    }
+    
     
     //read from the file line by line
     string line;
-    int child;
-    int parent;
+    LONGS myselfUID;
+    LONGS parentUID;
     string level;
-    int index = -1;
+    LONGS index = -1;
+    LONGS myselfIndex;
+    LONGS parentIndex;
     
     //resize the trie
     trie.resize((int)ids.size());
     levels.resize((int)ids.size());
-    while (getline(nodes_file, line, '\n'))
+    while (getline(file_nodes, line, '\n'))
     {
         index++;
         // put the line in stringstream
         stringstream liness(line);
         
-        liness >> child;
-        liness >> parent;
+        liness >> myselfUID;
+        liness >> parentUID;
         liness >> level;
         
-        child = id_to_index(child);
-        parent = id_to_index(parent);
+        myselfIndex = uid_to_index(myselfUID);
+        parentIndex = uid_to_index(parentUID);
         levels[index] = level;
         
         //checking
-        if(child != index)
+        if(myselfIndex != index)
             cerr << "there is a problem" << endl;
         
         //to initialize an element
-        trie[child].first = parent;
-        if( !(parent == 0 && child == 0) )
-            trie[parent].second.push_back(child);
+        trie[index].uid = myselfUID;
+        trie[index].parentUID = parentUID;
+        trie[index].myselfIndex = myselfIndex;
+        trie[index].parentIndex = parentIndex;
+
+        if( (parentIndex  !=  myselfIndex) )
+            trie[parentIndex].children.push_back(myselfIndex);
     }
     
     printf("trie is constructed .......\n");
@@ -104,28 +120,23 @@ void Tree_trie::constructing_trie()
 
 
 
-
-int Tree_trie::id_to_index(int id)
+LONGS Tree_trie::uid_to_index(LONG uid)
 {
-    int index;
+    LONGS index;
+    LONGS n = (int)ids.size();
     
-
-    
-    int n = (int)ids.size();
-    
-    int first = 0 , last = n - 1;
+    LONGS first = 0 , last = n - 1;
     while(last >= first)
     {
         index = (first+last)/2;
-        if(ids[index] == id)
+        if(ids[index] == uid)
             return index;
         
-        if(ids[index] > id)
+        if(ids[index] > uid)
             last = index - 1;
         else
             first = index + 1;
     }
-    
     index = - 1;
     return index;
     
@@ -135,12 +146,12 @@ int Tree_trie::id_to_index(int id)
 
 // implementation of the : construct_sorted_leafs(int node)
 
-void Tree_trie::construct_sorted_leafs(int node)
+void Tree_trie::construct_sorted_leafs(LONG index )
 {
-    int n = (int)trie[node].second.size();
+    LONGS n = (LONGS)trie[index].children.size();
     if(n < 1)
     {
-        sorted_leafs_df.push_back(node);
+        sorted_leafs_df.push_back(trie[index]);
         return;
     }
     
@@ -149,30 +160,138 @@ void Tree_trie::construct_sorted_leafs(int node)
     for (int i = 0 ; i < n ; ++i)
     {
         
-        construct_sorted_leafs(trie[node].second[i]);
+        construct_sorted_leafs(trie[index].children[i]);
     }
 }
 
 
 
 
-
-
-
-
-
-
-
-
-vector<int> Tree_trie::getSortedLeafsUIDs()
+vector<LONG> Tree_trie::getSortedLeafsUIDs()
 {
-    int n = (int)sorted_leafs_df.size() ;
-    vector<int> ret(n);
+    LONGS n = (LONGS)sorted_leafs_df.size() ;
+    vector<LONG> ret(n);
     
     for(int i= 0 ; i < n ; ++i)
-        ret[i] = ids[sorted_leafs_df[i]];
+        ret[i] = sorted_leafs_df[i].uid;
     return ret;
 }
+
+
+vector<LONGS> Tree_trie::get_All_Parents(Node node)
+{
+    vector<LONGS> ret;
+    ret.push_back(node.myselfIndex);
+    LONGS final_parent;
+    while(final_parent != 0)
+    {
+        final_parent = trie[final_parent].parentIndex;
+        ret.push_back(final_parent);
+    }
+    
+    return ret;
+}
+
+
+
+
+
+
+LONGS Tree_trie::get_LCA_between_Two_Nodes(Node node1 , Node node2)
+{
+    vector<LONGS> parents_node1 = get_All_Parents(node1);
+    
+    sort(parents_node1.begin() , parents_node1.end());
+    
+    vector<LONGS> parents_node2 = get_All_Parents(node2);
+    
+    for (LONGS i = 0  , n = parents_node2.size() ; i < n ; ++i)
+    {
+        if(binary_search(parents_node1.begin(), parents_node1.end(), parents_node2[i]))
+            return parents_node2[i];
+    }
+    
+    cerr << "Error: does not find the mutual LCA :(\n";
+    
+    return -1;
+}
+
+
+
+Node Tree_trie::get_Global_LCA(vector<Node> nodes)
+{
+    Node ret;
+    LONGS nodesSize = nodes.size();
+    if(nodesSize < 1)
+    {
+        ret.myselfIndex = -1;
+        cerr << "the global LCA function takes Empty set of nodes\n";
+        return ret;
+    }
+    else if (nodesSize == 1)
+        return nodes[0];
+    
+    ret = nodes[0];
+    for (LONGS i = 1 ;  i < nodesSize ; ++i)
+    {
+        ret = trie[  get_LCA_between_Two_Nodes(ret , nodes[i])   ];
+    }
+    return ret;
+}
+
+
+
+
+
+
+LONGS Tree_trie::get_Number_Of_Node_Leaves(Node node)
+{
+    LONGS childrenNumber = node.children.size();
+    
+    if(childrenNumber == 0)
+        return  1;
+    
+    LONGS ret = 0;
+    
+    for (int i = 0 ; i < childrenNumber; ++i)
+    {
+        ret += get_Number_Of_Node_Leaves(trie[node.children[i]]);
+    }
+    return ret;
+}
+
+
+
+
+Node Tree_trie::getNodeFromIndex(LONGS index)
+{
+    return trie[index];
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
