@@ -52,7 +52,7 @@
 		F33E41A81D3D31D500A94E24 = {
 			isa = PBXGroup;
 			children = (
-				F33E41B31D3D31D500A94E24 /* YJTaxonomy */,
+				F33E41B31D3D31D500A94E24 /* YJTaxonomer */,
 				F33E41B21D3D31D500A94E24 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -65,7 +65,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		F33E41B31D3D31D500A94E24 /* YJTaxonomy */ = {
+		F33E41B31D3D31D500A94E24 /* YJTaxonomer */ = {
 			isa = PBXGroup;
 			children = (
 				F33E41C61D3D36DA00A94E24 /* headers.h */,
@@ -78,6 +78,7 @@
 				F33E41CD1D3D36DA00A94E24 /* YRJ.hpp */,
 				F33E41B41D3D31D500A94E24 /* main.cpp */,
 			);
+			name = YJTaxonomer;
 			path = YJTaxonomy;
 			sourceTree = "<group>";
 		};
