@@ -186,8 +186,9 @@ vector<LONG> Tree_trie::getSortedLeafsUIDs()
 vector<LONGS> Tree_trie::get_All_Parents(Node node)
 {
     vector<LONGS> ret;
-    ret.push_back(node.myselfIndex);
-    LONGS final_parent;
+    LONGS final_parent = node.myselfIndex;
+    ret.push_back(final_parent);
+
     while(final_parent != 0)
     {
         final_parent = trie[final_parent].parentIndex;

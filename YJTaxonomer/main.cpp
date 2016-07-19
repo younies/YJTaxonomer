@@ -54,6 +54,9 @@ int main(int argc, const char * argv[]) {
         sorted_YRJ_nodes[i]->set_trie_node(node);
     }
     
+    
+    cout << sorted_YRJ_nodes.size() << " the sorted YRJ\n";
+    
     //
     //
     //
