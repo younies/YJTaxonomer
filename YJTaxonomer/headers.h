@@ -77,7 +77,7 @@ struct G_Statistics
     LONGS number_of_hitted_leaves;
     Node LCA_global;
     LONGS demoneratorGX;
-    LONGS GX;
+    double GX;
     
 };
 

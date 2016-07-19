@@ -97,7 +97,7 @@ int main(int argc, const char * argv[]) {
             gStat.demoneratorGX = tree->get_demonrator_GX(gStat.LCA_global, hitted_Indices);
             gStat.GX = (double)gStat.number_of_leaves / (double)gStat.demoneratorGX;
             
-            
+            final_output << hitted_Indices.size() << "\t";
             final_output << gStat.LCA_global.uid  << "\t";
             final_output << gStat.number_of_leaves << "\t" ;
             final_output << gStat.number_of_hitted_leaves << "\t";
