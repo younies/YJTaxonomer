@@ -351,6 +351,24 @@ void Tree_trie::build_specific_nodes(string path_to_nodes)
 
 
 
+void Tree_trie::update_specific_nodes(vector<LONG> UIDs)
+{
+    this->specific_nodes_indices_sorted.clear();
+    for (LONGS i = 0 , n = UIDs.size(); i < n ; ++i)
+    {
+        this->specific_nodes_indices_sorted.push_back(uid_to_index(UIDs[i]));
+    }
+    
+    //sort the vector
+    sort(this->specific_nodes_indices_sorted.begin(), this->specific_nodes_indices_sorted.end());
+    
+    //for constructing the sorted leafs again
+    this->sorted_leafs_df.clear();
+    this->construct_sorted_leafs();
+}
+
+
+
 bool Tree_trie::is_this_Index_node_specified(LONGS index)
 {
     return binary_search(this->specific_nodes_indices_sorted.begin(), this->specific_nodes_indices_sorted.end(), index);

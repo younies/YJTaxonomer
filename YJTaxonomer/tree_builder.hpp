@@ -71,6 +71,8 @@ public:
     vector<LONG> getSortedLeafsUIDs();
     
     void build_specific_nodes(string path_to_nodes);
+    void update_specific_nodes(vector<LONG> UIDs);
+    
     bool is_this_Index_node_specified(LONGS index);
     
     

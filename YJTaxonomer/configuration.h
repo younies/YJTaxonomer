@@ -21,7 +21,7 @@ string path_to_random_numbers = "/export/project/hondius/yr_db/for_garbages/tenM
 
 //names
 string name_of_the_databases = "databases";
-string name_of_output_results = "outputResults" +kmer_length_str + ".txt";
+string name_of_output_results = "outputResults" +kmer_length_str + "_2.txt";
 
 
 //pathes

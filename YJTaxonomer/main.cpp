@@ -38,6 +38,7 @@ int main(int argc, const char * argv[]) {
     vector<YRJ *> sorted_YRJ_nodes;
     vector<LONG> sorted_UIDs = tree->getSortedLeafsUIDs();
     
+    vector<LONG> availableUIDs;
     
     for (LONGS i = 0 , n = sorted_UIDs.size(); i < n ; ++i)
     {
@@ -48,6 +49,8 @@ int main(int argc, const char * argv[]) {
             continue;
         checkerIF.close();
         
+        availableUIDs.push_back(sorted_UIDs[i]);
+        
         sorted_YRJ_nodes.push_back(new YRJ(name));
         
         Node node = tree->getNodeFromIndex(tree->uid_to_index(sorted_UIDs[i]));
@@ -56,6 +59,8 @@ int main(int argc, const char * argv[]) {
     
     
     cout << sorted_YRJ_nodes.size() << " the sorted YRJ\n";
+    
+    tree->update_specific_nodes(availableUIDs);
     
     //
     //
@@ -90,7 +95,7 @@ int main(int argc, const char * argv[]) {
             gStat.number_of_leaves = tree->get_Number_Of_Node_Leaves(gStat.LCA_global);
             gStat.number_of_hitted_leaves = tree->getNumberOfHits(gStat.LCA_global, hitted_Indices);
             gStat.demoneratorGX = tree->get_demonrator_GX(gStat.LCA_global, hitted_Indices);
-            gStat.GX = (double)gStat.number_of_hitted_leaves / (double)gStat.demoneratorGX;
+            gStat.GX = (double)gStat.number_of_leaves / (double)gStat.demoneratorGX;
             
             
             final_output << gStat.LCA_global.uid  << "\t";
