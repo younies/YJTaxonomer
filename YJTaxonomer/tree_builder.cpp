@@ -354,3 +354,38 @@ bool Tree_trie::is_this_Index_node_specified(LONGS index)
 {
     return binary_search(this->specific_nodes_indices_sorted.begin(), this->specific_nodes_indices_sorted.end(), index);
 }
+
+
+
+
+
+
+
+
+
+
+LONGS Tree_trie::get_demonrator_GX(Node node , vector<LONGS> & indices)
+{
+    LONGS ret = 0;
+    for (LONGS i = 0 , n = node.children.size(); i < n ; ++i)
+    {
+        vector<Node> hitted_nodes;
+        
+        get_hitted_nodes( getNodeFromIndex(node.children[i]) , indices , hitted_nodes );
+        
+        if(hitted_nodes.size() < 1)
+            continue;
+        
+        Node current_LCA = get_Global_LCA(hitted_nodes);
+        
+        ret += get_Number_Of_Node_Leaves(current_LCA);
+    }
+    
+    return ret;
+}
+
+
+
+
+
+

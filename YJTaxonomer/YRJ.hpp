@@ -18,12 +18,18 @@ class YRJ {
     string path_to_file;
     LONG * kmersVector;
     
+    Node trie_node;
+    
 public:
     YRJ(string path_to_file);
     ~YRJ() ;
     bool isKmerExist(LONG kmer);
     //LONG getRandomSamples(vector<LONG> &samples , LONG numOfSamples);
     vector<LONG> getRandomSamples(string file_path, LONGS numOfSamples);// this function free all the memory after getting the samples
+    
+    void set_trie_node(Node node);
+    
+    LONGS getTrie_Index();
 };
 
 #endif /* YRJ_hpp */

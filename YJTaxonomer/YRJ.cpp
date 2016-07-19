@@ -88,7 +88,15 @@ vector<LONG> YRJ::getRandomSamples(string file_path , LONGS numOfSamples)
 
 
 
+void YRJ::set_trie_node(Node node)
+{
+    this->trie_node = node;
+}
 
 
 
 
+LONGS YRJ::getTrie_Index()
+{
+    return trie_node.myselfIndex;
+}

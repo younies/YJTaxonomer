@@ -68,4 +68,17 @@ struct Node {
     vector<LONG> children;
 };
 
+
+
+struct G_Statistics
+{
+    LONG kmer;
+    LONGS number_of_leaves;
+    LONGS number_of_hitted_leaves;
+    Node LCA_global;
+    LONGS demoneratorGX;
+    LONGS GX;
+    
+};
+
 #endif /* headers_h */

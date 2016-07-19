@@ -72,6 +72,9 @@ public:
     
     void build_specific_nodes(string path_to_nodes);
     bool is_this_Index_node_specified(LONGS index);
+    
+    
+    LONGS get_demonrator_GX(Node node ,vector<LONGS> & indices);
 };
 
 
