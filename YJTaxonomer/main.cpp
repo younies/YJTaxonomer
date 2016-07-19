@@ -42,6 +42,12 @@ int main(int argc, const char * argv[]) {
     for (LONGS i = 0 , n = sorted_UIDs.size(); i < n ; ++i)
     {
         string name = path_to_the_genomes_database + to_string( sorted_UIDs[i]) + ".yrj";
+        
+        ifstream checkerIF(name);
+        if(!checkerIF.is_open())
+            continue;
+        checkerIF.close();
+        
         sorted_YRJ_nodes.push_back(new YRJ(name));
         
         Node node = tree->getNodeFromIndex(tree->uid_to_index(sorted_UIDs[i]));
