@@ -26,7 +26,7 @@ int main(int argc, const char * argv[]) {
     
     //creating the total file
     
-    YRJ * all = new YRJ(path_to_the_program_directory + name_of_the_databases + kmer_length_str + "/all.yrj");
+    YRJ * all = new YRJ(path_to_the_genomes_database +"all.yrj");
     vector<LONG> random_kmers =  all->getRandomSamples(path_to_random_numbers, random_number_size);
     
     
@@ -41,7 +41,7 @@ int main(int argc, const char * argv[]) {
     
     for (LONGS i = 0 , n = sorted_UIDs.size(); i < n ; ++i)
     {
-        string name = path_to_the_program_directory + name_of_the_databases + kmer_length_str + "/" + to_string( sorted_UIDs[i]) + ".yrj";
+        string name = path_to_the_genomes_database + to_string( sorted_UIDs[i]) + ".yrj";
         sorted_YRJ_nodes.push_back(new YRJ(name));
         
         Node node = tree->getNodeFromIndex(tree->uid_to_index(sorted_UIDs[i]));
