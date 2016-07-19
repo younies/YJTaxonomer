@@ -26,6 +26,11 @@ class Tree_trie {
     string path_nodes;
     string path_names;
     
+    //for checking for specific names
+    bool is_specific_leaves = false;
+    string path_to_specific_names;
+    vector<LONGS> specific_nodes_indices_sorted;
+    
     vector< LONG> ids;//holds the uid for each node index
     vector<vector<string > > names;//it associate all the names for a node in the tree
     vector<string  > levels; // this specify the level for each node (if it is species, genus .... and so on)
@@ -64,6 +69,9 @@ public:
     
     
     vector<LONG> getSortedLeafsUIDs();
+    
+    void build_specific_nodes(string path_to_nodes);
+    bool is_this_Index_node_specified(LONGS index);
 };
 
 

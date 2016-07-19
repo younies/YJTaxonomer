@@ -249,8 +249,12 @@ LONGS Tree_trie::get_Number_Of_Node_Leaves(Node node)
     LONGS childrenNumber = node.children.size();
     
     if(childrenNumber == 0)
-        return  1;
-    
+       {
+           if( this->is_specific_leaves == false || this->is_this_Index_node_specified(node.myselfIndex)    )
+               return  1;
+           else
+               return 0;
+       }
     LONGS ret = 0;
     
     for (int i = 0 ; i < childrenNumber; ++i)
@@ -307,13 +311,36 @@ void Tree_trie::get_hitted_nodes(Node node , vector<LONGS> & sorted_indicies , v
 
 
 
+void Tree_trie::build_specific_nodes(string path_to_nodes)
+{
+    ifstream file_to_nodes(path_to_nodes);
+    if(!file_to_nodes.is_open())
+    {
+        cerr <<"there is no file for the specific node\n";
+        return;
+    }
+    
+    this->is_specific_leaves = true;
+    this->path_to_specific_names = path_to_nodes;
+    
+    string line;
+    LONGS UID;
+    while (getline(file_to_nodes, line))
+    {
+        stringstream liness(line);
+        liness >> UID;
+        this->specific_nodes_indices_sorted.push_back(uid_to_index(UID));
+    }
+    file_to_nodes.close();
+    
+    //sort the vector
+    sort(this->specific_nodes_indices_sorted.begin(), this->specific_nodes_indices_sorted.end());
+}
 
 
 
 
-
-
-
-
-
-
+bool Tree_trie::is_this_Index_node_specified(LONGS index)
+{
+    return binary_search(this->specific_nodes_indices_sorted.begin(), this->specific_nodes_indices_sorted.end(), index);
+}
