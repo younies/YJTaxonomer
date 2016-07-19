@@ -148,10 +148,15 @@ LONGS Tree_trie::uid_to_index(LONG uid)
 
 void Tree_trie::construct_sorted_leafs(LONG index )
 {
+    
+    
+    
     LONGS n = (LONGS)trie[index].children.size();
+    
     if(n < 1)
     {
-        sorted_leafs_df.push_back(trie[index]);
+        if(this->is_specific_leaves == false ||  this->is_this_Index_node_specified(index)  )
+            sorted_leafs_df.push_back(trie[index]);
         return;
     }
     
@@ -320,6 +325,7 @@ void Tree_trie::build_specific_nodes(string path_to_nodes)
         return;
     }
     
+    
     this->is_specific_leaves = true;
     this->path_to_specific_names = path_to_nodes;
     
@@ -335,6 +341,10 @@ void Tree_trie::build_specific_nodes(string path_to_nodes)
     
     //sort the vector
     sort(this->specific_nodes_indices_sorted.begin(), this->specific_nodes_indices_sorted.end());
+    
+    //for constructing the sorted leafs again
+    this->sorted_leafs_df.clear();
+    this->construct_sorted_leafs();
 }
 
 

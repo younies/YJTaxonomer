@@ -22,6 +22,16 @@ int main(int argc, const char * argv[]) {
     Node root = tree->getNodeFromIndex(0);
     cout << tree->get_Number_Of_Node_Leaves(root) << endl;
     
+    cout << tree->getSortedLeafsUIDs().size() << endl;
+    
+    tree->build_specific_nodes(path_to_the_specific_nodes);
+    
+    cout << tree->get_Number_Of_Node_Leaves(root) << endl;
+    cout << tree->getSortedLeafsUIDs().size() << endl;
+
+    
+    root =  tree->getNodeFromIndex( tree->uid_to_index(867902));
+    cout << tree->get_Number_Of_Node_Leaves(root) << endl;
     
     
     
