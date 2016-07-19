@@ -8,11 +8,21 @@
 
 #ifndef configuration_h
 #define configuration_h
-#include <string>
+#include "headers.h"
 using namespace std;
+
+
+//variables_string
+
+string kmer_length_str = "31";
+
+LONGS random_number_size = 10000000;
+string path_to_random_numbers = "";
 
 //names
 string name_of_the_databases = "databases";
+
+
 
 //pathes
 string path_to_the_program_directory = "";

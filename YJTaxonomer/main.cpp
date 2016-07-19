@@ -14,24 +14,17 @@
 
 
 int main(int argc, const char * argv[]) {
-    // insert code here...
+    
+    // hello to you
+    cout << "hello, the program started!\n";
+    
+    //creating the total file
+   
+    YRJ * all = new YRJ(path_to_the_program_directory + name_of_the_databases + kmer_length_str + "/all.yrj");
+    vector<LONG> random_kmers =  all->getRandomSamples(path_to_random_numbers, random_number_size);
     
     
-    Tree_trie * tree = new Tree_trie(path_to_the_names_dmp_file , path_to_the_nodes_dmp_file);
     
-    Node root = tree->getNodeFromIndex(0);
-    cout << tree->get_Number_Of_Node_Leaves(root) << endl;
-    
-    cout << tree->getSortedLeafsUIDs().size() << endl;
-    
-    tree->build_specific_nodes(path_to_the_specific_nodes);
-    
-    cout << tree->get_Number_Of_Node_Leaves(root) << endl;
-    cout << tree->getSortedLeafsUIDs().size() << endl;
-
-    
-    root =  tree->getNodeFromIndex( tree->uid_to_index(867902));
-    cout << tree->get_Number_Of_Node_Leaves(root) << endl;
     
     
     
