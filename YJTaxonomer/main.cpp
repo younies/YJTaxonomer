@@ -107,6 +107,15 @@ int main(int argc, const char * argv[]) {
             final_output << gStat.demoneratorGX << "\t";
             final_output << gStat.GX << endl;
             
+            if(hitted_Indices.size() <= 5)
+            {
+                for(LONGS k = 0 , nnk = hitted_Nodes.size() ; k < 0 ; ++k)
+                {
+                    final_output << hitted_Nodes[k].uid << "\t";
+                }
+                final_output << endl;
+            }
+            
         }
        
     }
