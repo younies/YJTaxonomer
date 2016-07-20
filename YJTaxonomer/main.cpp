@@ -109,7 +109,7 @@ int main(int argc, const char * argv[]) {
             
             if(hitted_Indices.size() <= 5)
             {
-                for(LONGS k = 0 , nnk = hitted_Nodes.size() ; k < 0 ; ++k)
+                for(LONGS k = 0 , nnk = hitted_Nodes.size() ; k < nnk ; ++k)
                 {
                     final_output << hitted_Nodes[k].uid << "\t";
                 }
