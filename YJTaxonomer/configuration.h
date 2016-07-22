@@ -17,7 +17,7 @@ using namespace std;
 string kmer_length_str = "31";
 
 LONGS random_number_size = 10000000;
-string path_to_random_numbers = "/export/project/hondius/yr_db/for_garbages/tenMillionRandom.txt";
+string path_to_random_numbers = "/export1/project/hondius/newKrakenResearch/generate_unique_random/TenMillionRandom.txt";
 
 //names
 string name_of_the_databases = "databases";
