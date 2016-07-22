@@ -77,6 +77,8 @@ public:
     
     
     LONGS get_demonrator_GX(Node node ,vector<LONGS> & indices);
+    
+    string get_level(Node node);
 };
 
 

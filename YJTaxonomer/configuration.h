@@ -21,7 +21,7 @@ string path_to_random_numbers = "/export1/project/hondius/newKrakenResearch/gene
 
 //names
 string name_of_the_databases = "databases";
-string name_of_output_results = "outputResults_newUIDs" +kmer_length_str + "_withKmers_withUIDS.txt";
+string name_of_output_results = "outputResults_newUIDs" +kmer_length_str + "_withKmers_withUIDS_with_levels.txt";
 
 
 //pathes

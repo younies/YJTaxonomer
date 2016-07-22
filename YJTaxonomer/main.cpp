@@ -46,7 +46,10 @@ int main(int argc, const char * argv[]) {
         
         ifstream checkerIF(name);
         if(!checkerIF.is_open())
+        {
+            cerr << "This_UID_doesn't exist: " << sorted_UIDs[i] << endl;
             continue;
+        }
         checkerIF.close();
         
         availableUIDs.push_back(sorted_UIDs[i]);
@@ -98,10 +101,14 @@ int main(int argc, const char * argv[]) {
             gStat.GX = (double)gStat.number_of_leaves / (double)gStat.demoneratorGX;
             
             
+            
+            
+            
             final_output << i << "\t";
             final_output << random_kmers[i] << "\t";
             final_output << hitted_Indices.size() << "\t";
             final_output << gStat.LCA_global.uid  << "\t";
+            final_output << tree->get_level(gStat.LCA_global) << "\t" ;
             final_output << gStat.number_of_leaves << "\t" ;
             final_output << gStat.number_of_hitted_leaves << "\t";
             final_output << gStat.demoneratorGX << "\t";
