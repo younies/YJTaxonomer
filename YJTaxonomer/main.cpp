@@ -47,7 +47,7 @@ int main(int argc, const char * argv[]) {
         ifstream checkerIF(name);
         if(!checkerIF.is_open())
         {
-            cerr << "This_UID_doesn't exist: " << sorted_UIDs[i] << endl;
+            cout << "This_UID_doesn't exist: " << sorted_UIDs[i] << endl;
             continue;
         }
         checkerIF.close();
