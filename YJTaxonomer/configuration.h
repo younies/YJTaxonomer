@@ -16,7 +16,7 @@ using namespace std;
 //variables
 
 string pattern = "##-#--###---#-#-#-#-#--#-##--##";
-LONG hash_pattern = 1;
+LONG hash_pattern = 4378607365427089167;
 
 //variables_string
 
