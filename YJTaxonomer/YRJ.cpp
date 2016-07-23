@@ -96,7 +96,23 @@ void YRJ::set_trie_node(Node node)
 
 
 
-LONGS YRJ::getTrie_Index()
+LONGS YRJ::getTrie_Index()// return the index of the file in the trie
 {
     return trie_node.myselfIndex;
 }
+
+
+
+
+LONG YRJ::get_kmer_index(LONGS index)
+{
+    return this->kmersVector[index];
+}
+
+
+
+
+
+
+
+

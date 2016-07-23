@@ -53,7 +53,7 @@ public:
     LONGS uid_to_index(LONG uid);// methid that convert from node id to its index
     
     
-    vector<LONGS> get_All_Parents(Node node);
+    vector<LONGS> get_All_Parents(Node node); // return parents indices
     LONGS get_LCA_between_Two_Nodes(Node node1 , Node node2);
     Node get_Global_LCA(vector<Node> nodes);
     
@@ -77,6 +77,12 @@ public:
     
     
     LONGS get_demonrator_GX(Node node ,vector<LONGS> & indices);
+    
+    vector<LONGS> get_global_kraken_uids(vector<Node> nodes);
+    
+    void calculate_index_all_uid_values( vector<Uid_Value> & all_index_values );
+    
+    LONGS get_vlue_for_parent(vector<Uid_Value> & all_index_values , LONGS index);
     
     string get_level(Node node);
 };

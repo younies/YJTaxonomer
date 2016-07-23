@@ -413,3 +413,151 @@ string Tree_trie::get_level(Node node)
     return this->levels[node.myselfIndex];
 }
 
+
+
+
+
+
+vector<LONGS> Tree_trie::get_global_kraken_uids(vector<Node> nodes)
+{
+    vector<Uid_Value> uids_values_all;
+    vector<LONGS> ret;
+    if(nodes.size() < 1)
+        return ret;
+    
+    vector<LONGS> indices(nodes.size());
+    for(LONGS i = 0 , n = nodes.size() ; i < n      ; ++i)
+    {
+        indices[i] = nodes[i].myselfIndex;
+    }
+    
+    sort(indices.begin(), indices.end());
+    
+    
+    LONGS size =1;
+    Uid_Value temp;
+    temp.uid = indices[0];
+    temp.value = 1;
+    uids_values_all.push_back(temp);
+    
+    for (LONGS i = 1 , n = indices.size(); i < n ; ++i)
+    {
+        if(temp.uid == indices[i])
+        {
+            uids_values_all[size - 1].value++;
+        }
+        else
+        {
+            size++;
+            temp.uid = indices[i];
+            temp.value = 1;
+            uids_values_all.push_back(temp);
+        }
+    }
+    
+    
+    
+    
+    calculate_index_all_uid_values( uids_values_all );
+    
+    
+    
+    
+    LONGS max_value = -100000;
+    
+    for (LONGS i = 0 , n = uids_values_all.size(); i < n ; ++i)
+    {
+        if(max_value < uids_values_all[i].value)
+            max_value = uids_values_all[i].value;
+    }
+    
+    
+    for (LONGS i = 0 , n = uids_values_all.size(); i < n ; ++i)
+    {
+        if(uids_values_all[i].value == max_value)
+        {
+            LONGS uid = this->trie[uids_values_all[i].uid ].uid;
+            ret.push_back( uid );
+        }
+    }
+    
+    if(ret.size() < 1)
+    {
+        cout << "error in finding all uid kraken\n";
+    }
+    return ret;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+void Tree_trie::calculate_index_all_uid_values( vector<Uid_Value> & all_index_values )
+{
+    for(LONGS i = 0 , n = all_index_values.size() ; i < n ; ++i )
+    {
+        vector<LONGS> all_parents =  get_All_Parents(  this->getNodeFromIndex(all_index_values[i].uid));
+        
+        for (LONGS j = 0 , m = all_parents.size(); j < m ; ++j)
+        {
+            all_index_values[i].value += get_vlue_for_parent(all_index_values, all_parents[i]);
+        }
+        
+        
+    }
+}
+
+
+
+
+LONGS Tree_trie::get_vlue_for_parent(vector<Uid_Value> & all_index_values , LONGS index)
+{
+    LONGS ret = 0;
+    
+    LONGS start = 0 , end = all_index_values.size() , mid;
+    
+    while (end >= start)
+    {
+        mid = (start + end)/2;
+        
+        if(index == all_index_values[mid].uid)
+            return all_index_values[mid].value;
+        else if (index < all_index_values[mid].uid)
+            end = mid - 1;
+        else
+            start = mid + 1;
+        
+        
+    }
+    
+    return  ret;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

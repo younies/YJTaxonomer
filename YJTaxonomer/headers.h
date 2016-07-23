@@ -81,4 +81,12 @@ struct G_Statistics
     
 };
 
+
+
+struct Uid_Value {
+    LONGS uid;
+    LONGS value;
+};
+
+
 #endif /* headers_h */
