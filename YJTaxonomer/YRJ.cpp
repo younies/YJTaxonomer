@@ -113,6 +113,19 @@ LONG YRJ::get_kmer_index(LONGS index)
 
 
 
+void  YRJ::Hash_the_kmers(LONG hash)
+{
+    for(LONGS i = 0 ;  i < this->numOfKmers ; ++i)
+        this->kmersVector[i] &= hash;
+    
+    sort(this->kmersVector, this->kmersVector + this->numOfKmers);
+}
+
+
+
+
+
+
 
 
 

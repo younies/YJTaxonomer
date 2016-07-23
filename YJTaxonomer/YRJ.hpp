@@ -32,6 +32,7 @@ public:
     LONGS getTrie_Index();
     LONGS get_kmers_numbers(){return this->numOfKmers;}
     LONG get_kmer_index(LONGS index);
+    void Hash_the_kmers(LONG hash);
 };
 
 #endif /* YRJ_hpp */

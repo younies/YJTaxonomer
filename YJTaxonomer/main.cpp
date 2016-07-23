@@ -73,19 +73,33 @@ int main(int argc, const char * argv[]) {
     //
     
     
-    ofstream final_output(path_to_the_program_directory + name_of_output_results);
+    ofstream final_output(path_to_the_results + name_of_exact_output);
     
     vector<LONGS>  hitted_Indices;
     vector<Node>   hitted_Nodes;
     
+    
+    final_output << "kmerIndex  kmer    Number_hits LCA level   number_of_leaves    number_of_hitted_leaves GX_dem  GX  Uids_up_to_5\n";;
     for (LONGS i , n = random_kmers.size() ; i < n ; ++i)
     {
         hitted_Indices.clear();
         hitted_Nodes.clear();
         build_vector( random_kmers[i] , sorted_YRJ_nodes ,   hitted_Indices );
         
-        if(hitted_Indices.size() > 1)
+        LONGS number_Of_Hits = hitted_Indices.size();
+        
+        final_output << i << "\t";
+        final_output << random_kmers[i] << "\t";
+        final_output << number_Of_Hits << "\t";
+        
+        if(number_Of_Hits == 0)
         {
+            final_output << "\n";
+            continue;
+        }
+        
+
+
             for(std::vector<LONGS>::iterator it = hitted_Indices.begin(); it != hitted_Indices.end(); ++it)
             {
                 hitted_Nodes.push_back(tree->getNodeFromIndex(*it));
@@ -99,20 +113,14 @@ int main(int argc, const char * argv[]) {
             gStat.number_of_hitted_leaves = tree->getNumberOfHits(gStat.LCA_global, hitted_Indices);
             gStat.demoneratorGX = tree->get_demonrator_GX(gStat.LCA_global, hitted_Indices);
             gStat.GX = (double)gStat.number_of_leaves / (double)gStat.demoneratorGX;
+        
             
-            
-            
-            
-            
-            final_output << i << "\t";
-            final_output << random_kmers[i] << "\t";
-            final_output << hitted_Indices.size() << "\t";
             final_output << gStat.LCA_global.uid  << "\t";
             final_output << tree->get_level(gStat.LCA_global) << "\t" ;
             final_output << gStat.number_of_leaves << "\t" ;
             final_output << gStat.number_of_hitted_leaves << "\t";
             final_output << gStat.demoneratorGX << "\t";
-            final_output << gStat.GX << endl;
+            final_output << gStat.GX << "\t";
             
             if(hitted_Indices.size() <= 5)
             {
@@ -123,12 +131,103 @@ int main(int argc, const char * argv[]) {
                 final_output << endl;
             }
             
-        }
+        
        
     }
     
     final_output.flush();
     final_output.close();
+    
+    
+    
+    
+    
+    for (LONGS i = 0 , n = random_kmers.size(); i < n ; ++i)
+    {
+        random_kmers[i] &= hash_pattern;
+    }
+    
+    for (LONGS i = 0 , n = sorted_YRJ_nodes.size(); i < n ; ++i)
+    {
+        sorted_YRJ_nodes[i]->Hash_the_kmers(hash_pattern);
+    }
+    
+    final_output.open(path_to_the_results + name_of_in_exact_output );
+    
+    
+    
+    
+    
+    /*
+     
+     
+     repetition
+     
+     */
+    
+    final_output << "kmerIndex  kmer    Number_hits LCA level   number_of_leaves    number_of_hitted_leaves GX_dem  GX  Uids_up_to_5\n";;
+    for (LONGS i , n = random_kmers.size() ; i < n ; ++i)
+    {
+        hitted_Indices.clear();
+        hitted_Nodes.clear();
+        build_vector( random_kmers[i] , sorted_YRJ_nodes ,   hitted_Indices );
+        
+        LONGS number_Of_Hits = hitted_Indices.size();
+        
+        final_output << i << "\t";
+        final_output << random_kmers[i] << "\t";
+        final_output << number_Of_Hits << "\t";
+        
+        if(number_Of_Hits == 0)
+        {
+            final_output << "\n";
+            continue;
+        }
+        
+        
+        
+        for(std::vector<LONGS>::iterator it = hitted_Indices.begin(); it != hitted_Indices.end(); ++it)
+        {
+            hitted_Nodes.push_back(tree->getNodeFromIndex(*it));
+        }
+        
+        
+        G_Statistics gStat;
+        
+        gStat.LCA_global = tree->get_Global_LCA(hitted_Nodes);
+        gStat.number_of_leaves = tree->get_Number_Of_Node_Leaves(gStat.LCA_global);
+        gStat.number_of_hitted_leaves = tree->getNumberOfHits(gStat.LCA_global, hitted_Indices);
+        gStat.demoneratorGX = tree->get_demonrator_GX(gStat.LCA_global, hitted_Indices);
+        gStat.GX = (double)gStat.number_of_leaves / (double)gStat.demoneratorGX;
+        
+        
+        final_output << gStat.LCA_global.uid  << "\t";
+        final_output << tree->get_level(gStat.LCA_global) << "\t" ;
+        final_output << gStat.number_of_leaves << "\t" ;
+        final_output << gStat.number_of_hitted_leaves << "\t";
+        final_output << gStat.demoneratorGX << "\t";
+        final_output << gStat.GX << "\t";
+        
+        if(hitted_Indices.size() <= 5)
+        {
+            for(LONGS k = 0 , nnk = hitted_Nodes.size() ; k < nnk ; ++k)
+            {
+                final_output << hitted_Nodes[k].uid << "\t";
+            }
+            final_output << endl;
+        }
+        
+        
+        
+    }
+    
+    final_output.flush();
+    final_output.close();
+    
+
+    
+    
+    
     
    
     
