@@ -128,11 +128,11 @@ int main(int argc, const char * argv[]) {
                 {
                     final_output << hitted_Nodes[k].uid << "\t";
                 }
-                final_output << endl;
+                
             }
             
         
-       
+       final_output << endl;
     }
     
     final_output.flush();
@@ -214,10 +214,10 @@ int main(int argc, const char * argv[]) {
             {
                 final_output << hitted_Nodes[k].uid << "\t";
             }
-            final_output << endl;
         }
         
-        
+        final_output << endl;
+
         
     }
     
