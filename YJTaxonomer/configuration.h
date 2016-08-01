@@ -21,6 +21,7 @@ LONG hash_pattern = 4378607365427089167;
 //variables_string
 
 string kmer_length_str = "31";
+LONGS kmer_length_long = 31;
 
 LONGS random_number_size = 1000000;
 string path_to_random_numbers = "/export1/project/hondius/newKrakenResearch/generate_unique_random/MillionRandomIndices.txt";
