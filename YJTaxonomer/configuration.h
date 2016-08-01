@@ -41,7 +41,7 @@ string name_of_exact_output = "exact_output_file.txt";
 string name_of_in_exact_output = "in_exact_output_file.txt";
 string name_of_exact_hits = "exact_hits_file.txt";
 string name_of_in_exact_hits = "in_exact_hits_file.txt";
-
+string name_of_inexact_with_numbers = "in_exact_with_numbers.txt";
 //pathes
 string path_to_the_program_directory = "/export1/project/hondius/newKrakenResearch/";
 string path_to_the_genomes_database = "/export1/project/hondius/newKrakenResearch/databases/kmerDatabase_new_31/";
