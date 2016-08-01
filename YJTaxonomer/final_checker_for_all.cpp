@@ -64,6 +64,8 @@ int main()
     final_output << "kmerIndex  kmer    hits_numbers.......\n";
 
     
+    cout << "build the result ....\n";
+    
     vector<vector<int> > results(sorted_YRJ_nodes.size());
     
     LONGS sorted_YRJ_number =sorted_YRJ_nodes.size();
@@ -71,6 +73,9 @@ int main()
     {
         results[i] = hero_vector->int_vector_result(*sorted_YRJ_nodes[i]);
     }
+    
+    
+    
     
     
     
@@ -84,6 +89,8 @@ int main()
         }
         
         final_output << endl;
+        
+        cout << "final result for kmer number " << i << endl;
     }
     
     
