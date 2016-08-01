@@ -13,6 +13,7 @@
 		F33E41DA1D3D38D400A94E24 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F33E41D31D3D38D400A94E24 /* main.cpp */; };
 		F33E41DC1D3D38D400A94E24 /* tree_builder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F33E41D61D3D38D400A94E24 /* tree_builder.cpp */; };
 		F33E41DD1D3D38D400A94E24 /* YRJ.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F33E41D81D3D38D400A94E24 /* YRJ.cpp */; };
+		F3FB2FE11D4EDBCA00461E95 /* YJR_Hero_Tester.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F3FB2FDF1D4EDBCA00461E95 /* YJR_Hero_Tester.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -40,6 +41,8 @@
 		F33E41D81D3D38D400A94E24 /* YRJ.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = YRJ.cpp; path = YJTaxonomer/YRJ.cpp; sourceTree = SOURCE_ROOT; };
 		F33E41D91D3D38D400A94E24 /* YRJ.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = YRJ.hpp; path = YJTaxonomer/YRJ.hpp; sourceTree = SOURCE_ROOT; };
 		F33E41DE1D3D3EFA00A94E24 /* configuration.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = configuration.h; path = YJTaxonomer/configuration.h; sourceTree = SOURCE_ROOT; };
+		F3FB2FDF1D4EDBCA00461E95 /* YJR_Hero_Tester.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = YJR_Hero_Tester.cpp; path = YJTaxonomer/YJR_Hero_Tester.cpp; sourceTree = SOURCE_ROOT; };
+		F3FB2FE01D4EDBCA00461E95 /* YJR_Hero_Tester.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = YJR_Hero_Tester.hpp; path = YJTaxonomer/YJR_Hero_Tester.hpp; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +86,8 @@
 				F33E41D91D3D38D400A94E24 /* YRJ.hpp */,
 				F3292CD61D4326AB00592DC6 /* taxonomer_for_files.cpp */,
 				F3292CDB1D43C7ED00592DC6 /* final_checker_for_all.cpp */,
+				F3FB2FDF1D4EDBCA00461E95 /* YJR_Hero_Tester.cpp */,
+				F3FB2FE01D4EDBCA00461E95 /* YJR_Hero_Tester.hpp */,
 			);
 			name = YJTaxonomer;
 			path = YJTaxonomy;
@@ -146,6 +151,7 @@
 			files = (
 				F3292CDC1D43C7ED00592DC6 /* final_checker_for_all.cpp in Sources */,
 				F33E41DD1D3D38D400A94E24 /* YRJ.cpp in Sources */,
+				F3FB2FE11D4EDBCA00461E95 /* YJR_Hero_Tester.cpp in Sources */,
 				F3292CDA1D43271800592DC6 /* node_reader.cpp in Sources */,
 				F3292CD71D4326AB00592DC6 /* taxonomer_for_files.cpp in Sources */,
 				F33E41DC1D3D38D400A94E24 /* tree_builder.cpp in Sources */,

@@ -11,6 +11,7 @@
 #include "node_reader.hpp"
 #include "tree_builder.hpp"
 #include "YRJ.hpp"
+#include "YJR_Hero_Tester.hpp"
 
 
 
