@@ -58,6 +58,35 @@ int main()
     tree->update_specific_nodes(availableUIDs);
 
     
+    ofstream final_output(path_to_the_results + name_of_inexact_with_numbers);
+    
+
+    final_output << "kmerIndex  kmer    hits_numbers.......\n";
+
+    
+    vector<vector<int> > results(sorted_YRJ_nodes.size());
+    
+    LONGS sorted_YRJ_number =sorted_YRJ_nodes.size();
+    for (LONGS i = 0, n = sorted_YRJ_nodes.size(); i < n ; ++i)
+    {
+        results[i] = hero_vector->int_vector_result(*sorted_YRJ_nodes[i]);
+    }
+    
+    
+    
+    for (LONGS i = 0 , n =  hero_vector->get_kmers_test_numbers() ; i < n ; ++i)
+    {
+        final_output << i << "\t";
+        final_output << hero_vector->get_kmer_with_index(i) << "\t";
+        for (LONGS j = 0; j < sorted_YRJ_number ; ++j)
+        {
+            final_output << results[j][i] << "\t";
+        }
+        
+        final_output << endl;
+    }
+    
+    
     
     
     

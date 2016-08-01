@@ -30,7 +30,7 @@ YRJ_Hero_Vector::YRJ_Hero_Vector(string file_path, string random_kmer_path , LON
 
 
 
-vector<int> YRJ_Hero_Vector::int_vector_result(YRJ yrj)
+vector<int> YRJ_Hero_Vector::int_vector_result(YRJ &yrj)
 {
     vector<int> vec_ret(this->kmers_test_numbers , (int)this->kmer_length);
     
