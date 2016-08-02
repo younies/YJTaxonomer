@@ -48,7 +48,7 @@ string path_to_the_genomes_database = "/export1/project/hondius/newKrakenResearc
 string path_to_the_names_dmp_file = "/export1/project/hondius/newKrakenResearch/databases/names.txt";
 string path_to_the_nodes_dmp_file = "/export1/project/hondius/newKrakenResearch/databases/nodes.txt";
 string path_to_the_specific_nodes = "/export1/project/hondius/newKrakenResearch/databases/uids_new.txt";
-
+string path_to_the_raw_genomes = "";
 
 
 

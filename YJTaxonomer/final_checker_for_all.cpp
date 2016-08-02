@@ -93,9 +93,4 @@ int main()
         cout << "final result for kmer number " << i << endl;
     }
     
-    
-    
-    
-    
-    
 }
