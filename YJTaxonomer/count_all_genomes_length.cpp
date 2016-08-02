@@ -60,16 +60,14 @@ int main()
         }
         checkerIF.close();
         
+        name = path_to_the_raw_genomes + to_string( sorted_UIDs[i]) + ".fa";
         
+        count_letters_in_genome += getTheNumber(name);
         
-        Node node = tree->getNodeFromIndex(tree->uid_to_index(sorted_UIDs[i]));
-        sorted_YRJ_nodes[i]->set_trie_node(node);
     }
     
     
-    cout << sorted_YRJ_nodes.size() << " the sorted YRJ\n";
-    
-    tree->update_specific_nodes(availableUIDs);
+    cout << count_letters_in_genome << endl;
     
 
 }
