@@ -499,15 +499,6 @@ vector<LONGS> Tree_trie::get_global_kraken_uids(vector<Node> nodes)
 
 
 
-
-
-
-
-
-
-
-
-
 void Tree_trie::calculate_index_all_uid_values( vector<Uid_Value> & all_index_values )
 {
     for(LONGS i = 0 , n = all_index_values.size() ; i < n ; ++i )

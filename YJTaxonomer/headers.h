@@ -60,15 +60,31 @@ typedef unsigned long LONG;
 typedef long LONGS;
 
 
-struct Node {
+
+
+//abstracting the new hashed kmer
+struct HashedNode{
+    short index;
+    unsigned int rawKmer; //the non hashed part in the kmer
+    unsigned int hashedKmer; // the part that is hashed in the kmer
+    
+    bool operator< ( const HashedNode& y) {
+        return std::tie(this->rawKmer, this->index , this->hashedKmer ) < std::tie(y.rawKmer, y.index , y.hashedKmer);
+    }
+};
+
+bool hashedNodeCompare(HashedNode &lhs, HashedNode &rhs) { return lhs < rhs; } // for the binartysearch or the sorting algorithms
+//end of the hasehd kmer implementation
+
+
+struct Node
+{
     LONG uid;
     LONG parentUID;
     LONGS parentIndex;
     LONGS myselfIndex;
     vector<LONG> children;
 };
-
-
 
 struct G_Statistics
 {
@@ -81,12 +97,9 @@ struct G_Statistics
     
 };
 
-
-
 struct Uid_Value {
     LONGS uid;
     LONGS value;
 };
-
 
 #endif /* headers_h */
